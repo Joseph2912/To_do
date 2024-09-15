@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <title>Gestor de Tareas</title>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <h1>Gestor de Tareas</h1>
+
+      <form id="crear-tarea">
+        <div class="form-group">
+          <label for="nombre">Nombre de la Tarea</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            class="form-control"
+            required
+          />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="crearTarea()">Crear Tarea</button>
+      </form>
+
+      <hr />
+
+      <h2>Listado de Tareas</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha de Creación</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="lista-tareas"></tbody>
+      </table>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
