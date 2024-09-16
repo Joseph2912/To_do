@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['crear'])) {
         $estado_id = 1;
 
         try {
-            $stmt = $pdo->prepare("INSERT INTO tareas (nombre, fecha, estados_id) VALUES (?, ?, ?)");
+            $stmt = $pdo->prepare("INSERT INTO tareas (nombre, fecha_creacion, estado_id) VALUES (?, ?, ?)");
             $stmt->execute([$nombre, $fecha, $estado_id]);
             echo "Tarea creada con éxito";
         } catch (PDOException $e) {
