@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id']) && isset($_POST[
         $estado_numero = $estados[$estado];
         try {
             // Cambia 'estado' por 'estados_id' o el nombre correcto de la columna en tu tabla
-            $stmt = $pdo->prepare("UPDATE tareas SET estados_id = ? WHERE id = ?");
+            $stmt = $pdo->prepare("UPDATE tareas SET estado_id = ? WHERE id = ?");
             $stmt->execute([$estado_numero, $id]);
             echo "Estado actualizado con éxito";
         } catch (PDOException $e) {

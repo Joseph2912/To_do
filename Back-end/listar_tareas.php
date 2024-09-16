@@ -4,16 +4,16 @@ include 'db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['listar'])) {
     try {
         // Selecciona el id del estado en lugar del nombre
-        $stmt = $pdo->query("SELECT t.id, t.nombre, t.fecha, e.id AS estado_id
+        $stmt = $pdo->query("SELECT t.id, t.nombre, t.fecha_creacion, e.id AS estado_id
                              FROM tareas t
-                             JOIN estados e ON t.estados_id = e.id");
+                             JOIN estados e ON t.estado_id = e.id");
         $tareas = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         // Genera HTML para cada tarea
         foreach ($tareas as $tarea) {
             echo "<tr>
             <td>{$tarea['nombre']}</td>
-            <td>{$tarea['fecha']}</td>
+            <td>{$tarea['fecha_creacion']}</td>
             <td>
                 <select onchange=\"cambiarEstado({$tarea['id']}, this.value)\">
                     <option value='pendiente'" . ($tarea['estado_id'] == 1 ? ' selected' : '') . ">Pendiente</option>
