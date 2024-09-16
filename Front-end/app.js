@@ -41,14 +41,35 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   function eliminarTarea(id) {
-    fetch("eliminar.php", {
+    fetch("http://localhost/Todo/Back-end/eliminar.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `id=${id}&eliminar=true`
+    })
+    .then(response => response.text())
+    .then(data => {
+        console.log("Respuesta del servidor:", data); // Mostrar la respuesta en la consola
+        cargarTareas(); // Actualizar la lista de tareas después de eliminar
+    })
+    .catch(error => console.error("Error al eliminar la tarea:", error));
+}
+
+function cambiarEstado(id, estado) {
+  fetch("http://localhost/Todo/Back-end/actualiza_estado.php", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: `eliminar=true&id=${id}`,
-    })
-      .then((response) => response.text())
-      .then(() => {
-        cargarTareas(); // Actualizar la lista después de eliminar una tarea
-      });
-  }
+      body: `id=${id}&estado=${encodeURIComponent(estado)}`
+  })
+  .then(response => response.text())
+  .then(data => {
+      console.log("Respuesta del servidor:", data); // Mostrar la respuesta en la consola
+      cargarTareas(); // Actualizar la lista de tareas después de cambiar el estado
+  })
+  .catch(error => console.error("Error al actualizar el estado:", error));
+}
+
+
+
+
+
   
