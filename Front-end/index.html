@@ -4,44 +4,88 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     />
     <title>Gestor de Tareas</title>
+
+    <style>
+      .container {
+        max-width: 800px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+
+      .btn-primary {
+        background-color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      .btn-primary:hover {
+        background-color: #0b5ed7;
+        border-color: #0a58ca;
+      }
+
+      .btn-primary:active {
+        transform: scale(0.98);
+      }
+
+      .table {
+        margin-top: 20px;
+      }
+
+      .table th,
+      .table td {
+        vertical-align: middle;
+      }
+    </style>
   </head>
 
   <body>
-    <div class="container mt-5">
-      <h1>Gestor de Tareas</h1>
+    <div class="container shadow-sm p-4 bg-light rounded">
+      <h1 class="text-center mb-4">Gestor de Tareas</h1>
 
-      <form id="crear-tarea">
-        <div class="form-group">
-          <label for="nombre">Nombre de la Tarea</label>
+      <form id="crear-tarea" class="mb-4">
+        <div class="form-floating mb-3">
           <input
             type="text"
             id="nombre"
             name="nombre"
             class="form-control"
+            placeholder="Nombre de la Tarea"
             required
           />
+          <label for="nombre">Nombre de la Tarea</label>
         </div>
-        <button type="button" class="btn btn-primary" onclick="crearTarea()">Crear Tarea</button>
+        <button
+          type="button"
+          class="btn btn-primary w-100"
+          onclick="crearTarea()"
+        >
+          Crear Tarea
+        </button>
       </form>
 
       <hr />
 
-      <h2>Listado de Tareas</h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Fecha de Creación</th>
-            <th>Estado</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody id="lista-tareas"></tbody>
-      </table>
+      <h2 class="text-center mb-4">Listado de Tareas</h2>
+
+      <div class="table-responsive">
+        <table class="table table-striped table-hover">
+          <thead class="table-dark">
+            <tr>
+              <th>Nombre</th>
+              <th>Fecha de Creación</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="lista-tareas"></tbody>
+        </table>
+      </div>
     </div>
 
     <script src="app.js"></script>
