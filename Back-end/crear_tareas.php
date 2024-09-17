@@ -10,14 +10,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['crear'])) {
         try {
             $stmt = $pdo->prepare("INSERT INTO tareas (nombre, fecha_creacion, estado_id) VALUES (?, ?, ?)");
             $stmt->execute([$nombre, $fecha, $estado_id]);
-            echo "Tarea creada con éxito";
+            echo "Tarea creada";
         } catch (PDOException $e) {
             echo "Error al crear tarea: " . $e->getMessage();
         }
     } else {
-        echo "Error: No se recibió ningún nombre para la tarea.";
+        echo "No se recibió ningún nombre para la tarea.";
     }
 } else {
-    echo "Error: No se recibió la solicitud correcta.";
+    echo "No se recibió la solicitud correcta.";
 }
 ?>

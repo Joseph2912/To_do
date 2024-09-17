@@ -1,6 +1,6 @@
 <?php
-// eliminar_tarea.php
-include 'db.php';  // Asegúrate de que $pdo esté correctamente configurado
+
+include 'db.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
     $id = $_POST['id'];
@@ -13,6 +13,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['id'])) {
         echo "Error al eliminar la tarea: " . $e->getMessage();
     }
 } else {
-    echo "Error: No se proporcionó un ID válido.";
+    echo "No se proporcionó un ID válido.";
 }
 ?>

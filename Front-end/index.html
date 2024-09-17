@@ -8,46 +8,30 @@
       rel="stylesheet"
     />
     <title>Gestor de Tareas</title>
-
     <style>
       .container {
         max-width: 800px;
         margin-top: 30px;
       }
-
-      .btn {
-        transition: background-color 0.3s ease, transform 0.2s ease;
+      table {
+        margin-top: 20px;
       }
-
+      .btn {
+        transition: background-color 0.3s ease;
+      }
       .btn-primary {
         background-color: #0d6efd;
         border-color: #0d6efd;
       }
-
       .btn-primary:hover {
         background-color: #0b5ed7;
         border-color: #0a58ca;
       }
-
-      .btn-primary:active {
-        transform: scale(0.98);
-      }
-
-      .table {
-        margin-top: 20px;
-      }
-
-      .table th,
-      .table td {
-        vertical-align: middle;
-      }
     </style>
   </head>
-
   <body>
     <div class="container shadow-sm p-4 bg-light rounded">
       <h1 class="text-center mb-4">Gestor de Tareas</h1>
-
       <form id="crear-tarea" class="mb-4">
         <div class="form-floating mb-3">
           <input
@@ -72,22 +56,24 @@
       <hr />
 
       <h2 class="text-center mb-4">Listado de Tareas</h2>
+      <table class="table table-striped table-hover table-responsive">
+        <thead class="table-dark">
+          <tr>
+            <th>Nombre</th>
+            <th>Fecha de Creación</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="lista-tareas"></tbody>
+      </table>
 
-      <div class="table-responsive">
-        <table class="table table-striped table-hover">
-          <thead class="table-dark">
-            <tr>
-              <th>Nombre</th>
-              <th>Fecha de Creación</th>
-              <th>Estado</th>
-              <th>Acciones</th>
-            </tr>
-          </thead>
-          <tbody id="lista-tareas"></tbody>
-        </table>
-      </div>
+      <a
+        href="http://localhost/Todo/Back-end/decargar.php"
+        class="btn btn-secondary mt-4"
+        >Descargar Archivo</a
+      >
     </div>
-
     <script src="app.js"></script>
   </body>
 </html>

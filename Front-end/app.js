@@ -1,4 +1,5 @@
-// Cargar las tareas cuando la página se carga
+// Cargar las tareas ------------------------------------------------------------
+
 document.addEventListener("DOMContentLoaded", function () {
   cargarTareas(); // Cargar tareas automáticamente al cargar la página
 });
@@ -17,6 +18,8 @@ function cargarTareas() {
     })
     .catch((error) => console.error("Error al cargar tareas:", error));
 }
+
+// Crear tareas-------------------------------------------------------------------
 
 function crearTarea() {
   const nombre = document.getElementById("nombre").value;
@@ -40,6 +43,8 @@ function crearTarea() {
     .catch((error) => console.error("Error:", error));
 }
 
+// Eliminar tareas-------------------------------------------------------------------
+
 function eliminarTarea(id) {
   fetch("http://localhost/Todo/Back-end/eliminar.php", {
     method: "POST",
@@ -53,6 +58,8 @@ function eliminarTarea(id) {
     })
     .catch((error) => console.error("Error al eliminar la tarea:", error));
 }
+
+// Cambiar estados-------------------------------------------------------------------
 
 function cambiarEstado(id, estado) {
   fetch("http://localhost/Todo/Back-end/actualiza_estado.php", {
