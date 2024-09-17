@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Gestor de Tareas es una aplicación web diseñada para ayudar en la gestión y seguimiento de tareas diarias. Permite crear, actualizar y eliminar tareas, así como clasificarlas según su estado (Pendiente, Realizada, Cancelada). La aplicación incluye una interfaz moderna y responsiva, desarrollada con Bootstrap, y soporta el modo oscuro para una experiencia de usuario mejorada.
+Gestor de Tareas es una aplicación web diseñada para ayudar en la gestión y seguimiento de tareas diarias. Permite crear, actualizar y eliminar tareas, así como clasificarlas según su estado (Pendiente, Realizada, Cancelada). La aplicación incluye una interfaz moderna y responsiva, desarrollada con Bootstrap.
 
 ## Características
 
